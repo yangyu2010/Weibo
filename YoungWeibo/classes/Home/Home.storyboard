@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZMc-cP-nl3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--首页-->
+        <scene sceneID="FXy-qj-Gge">
+            <objects>
+                <navigationController id="ZMc-cP-nl3" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="首页" image="tabbar_home" selectedImage="tabbar_home_highlighted" id="Czc-eW-RRe"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="L8r-Wv-Ndc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="xHH-DA-x9K" kind="relationship" relationship="rootViewController" id="5eV-Sb-ljT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xFW-Q4-YUw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-209" y="-1111"/>
+        </scene>
+        <!--首页-->
+        <scene sceneID="KCQ-7j-xB3">
+            <objects>
+                <tableViewController id="xHH-DA-x9K" customClass="HomeViewController" customModule="YoungWeibo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="275" sectionHeaderHeight="28" sectionFooterHeight="28" id="M4w-z6-kRl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeStatusCellID" rowHeight="275" id="QoO-ip-9f5" customClass="HomeTableViewCell" customModule="YoungWeibo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="275"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QoO-ip-9f5" id="N3d-Ln-laF">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="275"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_default" translatesAutoresizingMaskIntoConstraints="NO" id="uSj-VL-pJs" userLabel="头像">
+                                            <rect key="frame" x="20" y="20" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="5Vx-Xe-fcf"/>
+                                                <constraint firstAttribute="height" constant="40" id="cRT-gM-Vhp"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_grassroot" translatesAutoresizingMaskIntoConstraints="NO" id="rss-Jr-Cdk" userLabel="微博认证">
+                                            <rect key="frame" x="43" y="43" width="17" height="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="17" id="Md4-gL-P8W"/>
+                                                <constraint firstAttribute="width" constant="17" id="lAa-wr-Lwf"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赛富城" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ts-bX-Uh3" userLabel="昵称">
+                                            <rect key="frame" x="68" y="20" width="46" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_icon_membership_level6" translatesAutoresizingMaskIntoConstraints="NO" id="nYV-4r-kfy" userLabel="会员等级">
+                                            <rect key="frame" x="122" y="22" width="14" height="14"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="14" id="d2p-Ld-xPN"/>
+                                                <constraint firstAttribute="width" constant="14" id="rjG-2D-eQz"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6小时前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPW-gO-zcZ" userLabel="发布时间">
+                                            <rect key="frame" x="68" y="46" width="41" height="14"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="来自iPhone7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Txy-r7-mYt" userLabel="发布来源">
+                                            <rect key="frame" x="114" y="46" width="65" height="14"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FJc-PU-NwO" userLabel="底部工具栏">
+                                            <rect key="frame" x="0.0" y="235" width="375" height="40"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rje-Lc-Kld">
+                                                    <rect key="frame" x="0.0" y="1" width="125" height="31"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                    <state key="normal" title="转发" image="timeline_icon_retweet">
+                                                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lRb-6R-Nc5">
+                                                    <rect key="frame" x="250" y="1" width="125" height="31"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                    <state key="normal" title="点赞" image="timeline_icon_unlike">
+                                                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qBj-FQ-QZ4">
+                                                    <rect key="frame" x="125" y="1" width="125" height="31"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                    <state key="normal" title="评论" image="timeline_icon_comment">
+                                                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yga-7E-zrN" userLabel="分割线2">
+                                                    <rect key="frame" x="249" y="7" width="1" height="20"/>
+                                                    <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="1" id="Ni5-yy-X2d"/>
+                                                        <constraint firstAttribute="height" constant="20" id="mWB-FV-r81"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jne-50-j4l" userLabel="分割线1">
+                                                    <rect key="frame" x="124" y="7" width="1" height="20"/>
+                                                    <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="1" id="C6f-hA-gSy"/>
+                                                        <constraint firstAttribute="height" constant="20" id="WSc-1u-fbA"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="lRb-6R-Nc5" firstAttribute="leading" secondItem="qBj-FQ-QZ4" secondAttribute="trailing" id="1gT-vn-H1o"/>
+                                                <constraint firstItem="lRb-6R-Nc5" firstAttribute="top" secondItem="rje-Lc-Kld" secondAttribute="top" id="2WU-f2-PFb"/>
+                                                <constraint firstItem="rje-Lc-Kld" firstAttribute="top" secondItem="FJc-PU-NwO" secondAttribute="top" constant="1" id="Amc-KY-jOx"/>
+                                                <constraint firstAttribute="trailing" secondItem="lRb-6R-Nc5" secondAttribute="trailing" id="CnJ-eu-N3R"/>
+                                                <constraint firstItem="qBj-FQ-QZ4" firstAttribute="height" secondItem="rje-Lc-Kld" secondAttribute="height" id="D1O-zg-KeA"/>
+                                                <constraint firstItem="lRb-6R-Nc5" firstAttribute="width" secondItem="rje-Lc-Kld" secondAttribute="width" id="OJf-KW-oKO"/>
+                                                <constraint firstItem="Yga-7E-zrN" firstAttribute="centerY" secondItem="qBj-FQ-QZ4" secondAttribute="centerY" id="Ogh-O5-uFF"/>
+                                                <constraint firstItem="qBj-FQ-QZ4" firstAttribute="width" secondItem="rje-Lc-Kld" secondAttribute="width" id="QUK-53-DNX"/>
+                                                <constraint firstItem="lRb-6R-Nc5" firstAttribute="height" secondItem="rje-Lc-Kld" secondAttribute="height" id="TWw-Gx-xOD"/>
+                                                <constraint firstItem="qBj-FQ-QZ4" firstAttribute="leading" secondItem="rje-Lc-Kld" secondAttribute="trailing" id="U0n-xk-ea5"/>
+                                                <constraint firstItem="jne-50-j4l" firstAttribute="centerY" secondItem="rje-Lc-Kld" secondAttribute="centerY" id="WGA-tF-gkb"/>
+                                                <constraint firstAttribute="bottom" secondItem="lRb-6R-Nc5" secondAttribute="bottom" constant="8" id="XkV-48-vOD"/>
+                                                <constraint firstItem="lRb-6R-Nc5" firstAttribute="leading" secondItem="Yga-7E-zrN" secondAttribute="trailing" id="ZLh-LR-ZB0"/>
+                                                <constraint firstItem="qBj-FQ-QZ4" firstAttribute="leading" secondItem="jne-50-j4l" secondAttribute="trailing" id="gKW-wD-LKL"/>
+                                                <constraint firstItem="rje-Lc-Kld" firstAttribute="leading" secondItem="FJc-PU-NwO" secondAttribute="leading" id="rHw-Dq-qc4"/>
+                                                <constraint firstItem="qBj-FQ-QZ4" firstAttribute="top" secondItem="rje-Lc-Kld" secondAttribute="top" id="sMv-PK-QHU"/>
+                                                <constraint firstAttribute="height" constant="40" id="wAL-bS-Rc0"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dPd-gT-dBK" userLabel="转发微博的背景View">
+                                            <rect key="frame" x="0.0" y="114" width="375" height="121"/>
+                                            <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                                        </view>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="M3c-3X-SNT" userLabel="CollecView" customClass="PicCollectionView" customModule="YoungWeibo" customModuleProvider="target">
+                                            <rect key="frame" x="20" y="160.5" width="147" height="65"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="147" id="7C1-EH-fJ2"/>
+                                                <constraint firstAttribute="height" constant="65" id="vIw-lL-fWS"/>
+                                            </constraints>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BND-jW-7VH">
+                                                <size key="itemSize" width="50" height="51"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PicCollecViewCellID" id="TtR-Xt-lrB" userLabel="CollecViewCell" customClass="PicCollectionViewCell" customModule="YoungWeibo" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="51"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="51"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RNZ-O5-G3X" userLabel="图片">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="51"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                    </view>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="RNZ-O5-G3X" secondAttribute="bottom" id="Eso-86-CVN"/>
+                                                        <constraint firstItem="RNZ-O5-G3X" firstAttribute="top" secondItem="TtR-Xt-lrB" secondAttribute="top" id="Suf-3o-F5M"/>
+                                                        <constraint firstItem="RNZ-O5-G3X" firstAttribute="leading" secondItem="TtR-Xt-lrB" secondAttribute="leading" id="kad-a6-Av6"/>
+                                                        <constraint firstAttribute="trailing" secondItem="RNZ-O5-G3X" secondAttribute="trailing" id="nwj-KU-Ln0"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outlet property="icon" destination="RNZ-O5-G3X" id="arM-NW-ahx"/>
+                                                    </connections>
+                                                </collectionViewCell>
+                                            </cells>
+                                        </collectionView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="对,今天天气很不错" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7R-93-sGE" userLabel="内容">
+                                            <rect key="frame" x="20" y="70" width="108" height="36"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="108" id="Rna-dr-kwm"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@赛富城: 今天天气不错的" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMh-Qg-vkE" userLabel="转发的微博">
+                                            <rect key="frame" x="20" y="121" width="108" height="31.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="dPd-gT-dBK" firstAttribute="top" secondItem="S7R-93-sGE" secondAttribute="bottom" constant="8" id="0Bj-BE-X7r"/>
+                                        <constraint firstItem="FJc-PU-NwO" firstAttribute="top" secondItem="M3c-3X-SNT" secondAttribute="bottom" priority="750" constant="10" id="0lJ-6y-h6p"/>
+                                        <constraint firstItem="nYV-4r-kfy" firstAttribute="leading" secondItem="6ts-bX-Uh3" secondAttribute="trailing" constant="8" id="2bk-LK-VzH"/>
+                                        <constraint firstItem="uSj-VL-pJs" firstAttribute="leading" secondItem="N3d-Ln-laF" secondAttribute="leadingMargin" constant="12" id="6IE-y7-cS5"/>
+                                        <constraint firstItem="gPW-gO-zcZ" firstAttribute="bottom" secondItem="uSj-VL-pJs" secondAttribute="bottom" id="7HC-92-yaq"/>
+                                        <constraint firstAttribute="trailing" secondItem="dPd-gT-dBK" secondAttribute="trailing" id="7wO-UE-GbM"/>
+                                        <constraint firstItem="FJc-PU-NwO" firstAttribute="leading" secondItem="N3d-Ln-laF" secondAttribute="leading" id="8Ub-oI-Ah6"/>
+                                        <constraint firstItem="dPd-gT-dBK" firstAttribute="leading" secondItem="N3d-Ln-laF" secondAttribute="leading" id="A4N-eq-dcS"/>
+                                        <constraint firstAttribute="bottom" secondItem="FJc-PU-NwO" secondAttribute="bottom" id="Ahn-h9-I7e"/>
+                                        <constraint firstItem="nYV-4r-kfy" firstAttribute="centerY" secondItem="6ts-bX-Uh3" secondAttribute="centerY" id="IHa-LX-D5k"/>
+                                        <constraint firstItem="rss-Jr-Cdk" firstAttribute="trailing" secondItem="uSj-VL-pJs" secondAttribute="trailing" id="KWx-IW-fxm"/>
+                                        <constraint firstItem="gPW-gO-zcZ" firstAttribute="leading" secondItem="6ts-bX-Uh3" secondAttribute="leading" id="LkH-J9-4i4"/>
+                                        <constraint firstItem="Txy-r7-mYt" firstAttribute="centerY" secondItem="gPW-gO-zcZ" secondAttribute="centerY" id="Nnp-Wt-JQQ"/>
+                                        <constraint firstItem="gMh-Qg-vkE" firstAttribute="width" secondItem="S7R-93-sGE" secondAttribute="width" id="Ovb-eU-5Bx"/>
+                                        <constraint firstItem="rss-Jr-Cdk" firstAttribute="bottom" secondItem="uSj-VL-pJs" secondAttribute="bottom" id="Ue6-Xm-ACz"/>
+                                        <constraint firstAttribute="trailing" secondItem="FJc-PU-NwO" secondAttribute="trailing" id="V0F-4l-qrV"/>
+                                        <constraint firstItem="M3c-3X-SNT" firstAttribute="leading" secondItem="uSj-VL-pJs" secondAttribute="leading" id="VBl-Py-6CM"/>
+                                        <constraint firstItem="6ts-bX-Uh3" firstAttribute="top" secondItem="uSj-VL-pJs" secondAttribute="top" id="W49-mm-Eud"/>
+                                        <constraint firstItem="6ts-bX-Uh3" firstAttribute="leading" secondItem="uSj-VL-pJs" secondAttribute="trailing" constant="8" id="XwW-LT-t28"/>
+                                        <constraint firstItem="gMh-Qg-vkE" firstAttribute="top" secondItem="S7R-93-sGE" secondAttribute="bottom" constant="15" id="aYp-p0-g4d"/>
+                                        <constraint firstItem="FJc-PU-NwO" firstAttribute="top" secondItem="dPd-gT-dBK" secondAttribute="bottom" id="c9S-qj-7a6"/>
+                                        <constraint firstItem="gMh-Qg-vkE" firstAttribute="leading" secondItem="uSj-VL-pJs" secondAttribute="leading" id="e8e-fs-FXi"/>
+                                        <constraint firstItem="uSj-VL-pJs" firstAttribute="top" secondItem="N3d-Ln-laF" secondAttribute="topMargin" constant="12" id="gjx-e0-wnZ"/>
+                                        <constraint firstItem="S7R-93-sGE" firstAttribute="leading" secondItem="uSj-VL-pJs" secondAttribute="leading" id="hNX-Fi-ut4"/>
+                                        <constraint firstItem="M3c-3X-SNT" firstAttribute="top" secondItem="gMh-Qg-vkE" secondAttribute="bottom" constant="8" id="kT2-qQ-xzU"/>
+                                        <constraint firstItem="Txy-r7-mYt" firstAttribute="leading" secondItem="gPW-gO-zcZ" secondAttribute="trailing" constant="5" id="mXF-FQ-Nby"/>
+                                        <constraint firstItem="S7R-93-sGE" firstAttribute="top" secondItem="uSj-VL-pJs" secondAttribute="bottom" constant="10" id="ttY-FE-x3K"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="buttomToolView" destination="FJc-PU-NwO" id="sog-2V-9aU"/>
+                                    <outlet property="collecBottomCons" destination="0lJ-6y-h6p" id="yoo-M3-eZc"/>
+                                    <outlet property="collecHeightCons" destination="vIw-lL-fWS" id="O8N-1P-cvA"/>
+                                    <outlet property="collecWidthCons" destination="7C1-EH-fJ2" id="YvI-s0-4fa"/>
+                                    <outlet property="contentLab" destination="S7R-93-sGE" id="R6L-SH-j9Y"/>
+                                    <outlet property="contentLabWidthCons" destination="Rna-dr-kwm" id="dF9-05-czq"/>
+                                    <outlet property="formLab" destination="Txy-r7-mYt" id="qG3-IM-oGY"/>
+                                    <outlet property="icon" destination="uSj-VL-pJs" id="BJp-Mb-hJd"/>
+                                    <outlet property="nameLab" destination="6ts-bX-Uh3" id="yng-3S-Mn3"/>
+                                    <outlet property="picColleView" destination="M3c-3X-SNT" id="xiA-sp-ykX"/>
+                                    <outlet property="retweetBgView" destination="dPd-gT-dBK" id="Ckj-aO-6Cl"/>
+                                    <outlet property="retweetLab" destination="gMh-Qg-vkE" id="8Kp-Uo-XNf"/>
+                                    <outlet property="retweetLabTopCons" destination="aYp-p0-g4d" id="mHP-YG-3nU"/>
+                                    <outlet property="timeLab" destination="gPW-gO-zcZ" id="Q3z-IZ-ho1"/>
+                                    <outlet property="verifiedView" destination="rss-Jr-Cdk" id="keK-Z4-g2G"/>
+                                    <outlet property="vipImg" destination="nYV-4r-kfy" id="WS6-3l-Dae"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="xHH-DA-x9K" id="f23-gv-86d"/>
+                            <outlet property="delegate" destination="xHH-DA-x9K" id="oKi-OS-DLV"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="首页" id="hcp-ze-aG8"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nqg-TE-UNd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="704.79999999999995" y="-1111.3943028485758"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="avatar_default" width="50" height="50"/>
+        <image name="avatar_grassroot" width="17" height="17"/>
+        <image name="common_icon_membership_level6" width="14" height="14"/>
+        <image name="tabbar_home" width="30" height="30"/>
+        <image name="tabbar_home_highlighted" width="30" height="30"/>
+        <image name="timeline_icon_comment" width="18" height="18"/>
+        <image name="timeline_icon_retweet" width="18" height="18"/>
+        <image name="timeline_icon_unlike" width="18" height="18"/>
+    </resources>
+</document>

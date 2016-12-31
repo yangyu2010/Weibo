@@ -1,0 +1,6 @@
+framework module Pods_YoungWeibo {
+  umbrella header "Pods-YoungWeibo-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PresentViewController" customModule="YoungWeibo" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="210" height="357"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popover_background" translatesAutoresizingMaskIntoConstraints="NO" id="gks-52-ywM">
+                    <rect key="frame" x="0.0" y="0.0" width="210" height="357"/>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CLt-ON-gG6">
+                    <rect key="frame" x="15" y="15" width="180" height="327"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="CLt-ON-gG6" secondAttribute="trailing" constant="15" id="5hS-hS-aj5"/>
+                <constraint firstItem="gks-52-ywM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9P3-1K-HYc"/>
+                <constraint firstAttribute="bottom" secondItem="gks-52-ywM" secondAttribute="bottom" id="Gpp-20-qoH"/>
+                <constraint firstAttribute="trailing" secondItem="gks-52-ywM" secondAttribute="trailing" id="YY4-Tj-9Ab"/>
+                <constraint firstAttribute="bottom" secondItem="CLt-ON-gG6" secondAttribute="bottom" constant="15" id="b6P-kc-RAv"/>
+                <constraint firstItem="gks-52-ywM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hjq-e4-xPk"/>
+                <constraint firstItem="CLt-ON-gG6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="iZp-HR-0uW"/>
+                <constraint firstItem="CLt-ON-gG6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="15" id="zox-It-8TX"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-77" y="11.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="popover_background" width="217" height="49"/>
+    </resources>
+</document>

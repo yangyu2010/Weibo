@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="emojiCollecViewCellID" id="gTV-IL-0wX" customClass="EmojiCollectionViewCell" customModule="EmojiKeyBoard" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="147" height="135"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="147" height="135"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83O-gZ-hI3">
+                        <rect key="frame" x="0.0" y="0.0" width="147" height="135"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="83O-gZ-hI3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="M3V-nV-1xG"/>
+                <constraint firstAttribute="trailing" secondItem="83O-gZ-hI3" secondAttribute="trailing" id="nqV-Lw-QYb"/>
+                <constraint firstAttribute="bottom" secondItem="83O-gZ-hI3" secondAttribute="bottom" id="pTq-Lv-g6f"/>
+                <constraint firstItem="83O-gZ-hI3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="zGc-6W-IjH"/>
+            </constraints>
+            <size key="customSize" width="147" height="135"/>
+            <connections>
+                <outlet property="emojiBtn" destination="83O-gZ-hI3" id="GHD-Pr-UmL"/>
+            </connections>
+            <point key="canvasLocation" x="-154" y="-41"/>
+        </collectionViewCell>
+    </objects>
+</document>

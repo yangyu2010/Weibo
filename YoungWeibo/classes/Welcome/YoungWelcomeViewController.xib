@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YoungWelcomeViewController" customModule="YoungWeibo" customModuleProvider="target">
+            <connections>
+                <outlet property="icon" destination="6p7-6m-Hcn" id="Jfo-Rj-BQr"/>
+                <outlet property="iconButtomCons" destination="6oS-B0-ZcQ" id="EJw-bA-cLo"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ad_background" translatesAutoresizingMaskIntoConstraints="NO" id="36J-b2-i12">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_default_big" translatesAutoresizingMaskIntoConstraints="NO" id="6p7-6m-Hcn">
+                    <rect key="frame" x="142" y="427" width="90" height="90"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="3CK-tH-NoJ"/>
+                        <constraint firstAttribute="height" constant="90" id="6h5-TU-EZt"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="45"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎回来" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ocj-7F-EFs">
+                    <rect key="frame" x="157" y="532" width="62" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Ocj-7F-EFs" firstAttribute="top" secondItem="6p7-6m-Hcn" secondAttribute="bottom" constant="15" id="38l-E2-7Ef"/>
+                <constraint firstAttribute="trailing" secondItem="36J-b2-i12" secondAttribute="trailing" id="4Je-Ck-gaX"/>
+                <constraint firstAttribute="bottom" secondItem="6p7-6m-Hcn" secondAttribute="bottom" constant="150" id="6oS-B0-ZcQ"/>
+                <constraint firstItem="36J-b2-i12" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="F6k-ks-mYp"/>
+                <constraint firstItem="36J-b2-i12" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="IGg-sW-cI5"/>
+                <constraint firstAttribute="bottom" secondItem="36J-b2-i12" secondAttribute="bottom" id="Lcd-B2-bgh"/>
+                <constraint firstItem="Ocj-7F-EFs" firstAttribute="centerX" secondItem="36J-b2-i12" secondAttribute="centerX" id="Pzh-lg-xGt"/>
+                <constraint firstItem="36J-b2-i12" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="aS9-n3-ONk"/>
+                <constraint firstItem="6p7-6m-Hcn" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="rgU-Bm-lVC"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ad_background" width="375" height="667"/>
+        <image name="avatar_default_big" width="85" height="85"/>
+    </resources>
+</document>
