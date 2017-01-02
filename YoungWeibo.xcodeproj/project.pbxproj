@@ -13,6 +13,7 @@
 		8613D8D91DFEB94C002F1E9D /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8613D8D81DFEB94C002F1E9D /* UserAccount.swift */; };
 		8613D8DD1DFFBCFC002F1E9D /* AlamofireNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8613D8DC1DFFBCFC002F1E9D /* AlamofireNetwork.swift */; };
 		8613D91B1DFFF32B002F1E9D /* UserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8613D91A1DFFF32B002F1E9D /* UserAccountViewModel.swift */; };
+		861E532C1E1A3C08007956BF /* YoungProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861E532B1E1A3C08007956BF /* YoungProgressView.swift */; };
 		862FC6DC1E123AEA00D78557 /* FindEmoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862FC6DB1E123AEA00D78557 /* FindEmoji.swift */; };
 		864F65AB1E094DB7002D729A /* EmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864F65A11E094DB7002D729A /* EmojiCollectionViewCell.swift */; };
 		864F65AC1E094DB7002D729A /* EmojiCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 864F65A21E094DB7002D729A /* EmojiCollectionViewCell.xib */; };
@@ -39,6 +40,7 @@
 		86A432CB1DFAD2DD00225022 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86A432C91DFAD2DD00225022 /* LaunchScreen.storyboard */; };
 		86A432D61DFAD2DD00225022 /* YoungWeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A432D51DFAD2DD00225022 /* YoungWeiboTests.swift */; };
 		86A432E11DFAD2DD00225022 /* YoungWeiboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A432E01DFAD2DD00225022 /* YoungWeiboUITests.swift */; };
+		86A63D751E1A0D7200E8EA79 /* YoungPhotoBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A63D741E1A0D7200E8EA79 /* YoungPhotoBrowserViewController.swift */; };
 		86ABBB8B1E00F5E400B29312 /* YoungWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ABBB891E00F5E400B29312 /* YoungWelcomeViewController.swift */; };
 		86ABBB8C1E00F5E400B29312 /* YoungWelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86ABBB8A1E00F5E400B29312 /* YoungWelcomeViewController.xib */; };
 		86ABBB8F1E01111300B29312 /* HomeStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ABBB8E1E01111300B29312 /* HomeStatusModel.swift */; };
@@ -60,6 +62,7 @@
 		86AFC4741DFD6D9B00B377C9 /* PopoverAnimaor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AFC4731DFD6D9B00B377C9 /* PopoverAnimaor.swift */; };
 		86D5D55D1DFADC7400EB1BA1 /* YoungMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5D55C1DFADC7400EB1BA1 /* YoungMainViewController.swift */; };
 		86D5D5681DFB018B00EB1BA1 /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 86D5D5671DFB018B00EB1BA1 /* MainVCSettings.json */; };
+		86F7074C1E1A2370004D3615 /* PhotoBrowserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F7074B1E1A2370004D3615 /* PhotoBrowserCell.swift */; };
 		86F97AFC1DFBBE8F00FAAEB0 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86F97AFB1DFBBE8F00FAAEB0 /* Home.storyboard */; };
 		86F97AFE1DFBBECA00FAAEB0 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86F97AFD1DFBBECA00FAAEB0 /* Message.storyboard */; };
 		86F97B001DFBBEF600FAAEB0 /* Discovery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86F97AFF1DFBBEF600FAAEB0 /* Discovery.storyboard */; };
@@ -100,6 +103,7 @@
 		8613D8D81DFEB94C002F1E9D /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		8613D8DC1DFFBCFC002F1E9D /* AlamofireNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireNetwork.swift; sourceTree = "<group>"; };
 		8613D91A1DFFF32B002F1E9D /* UserAccountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountViewModel.swift; sourceTree = "<group>"; };
+		861E532B1E1A3C08007956BF /* YoungProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoungProgressView.swift; sourceTree = "<group>"; };
 		862FC6DB1E123AEA00D78557 /* FindEmoji.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindEmoji.swift; sourceTree = "<group>"; };
 		864F65A11E094DB7002D729A /* EmojiCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiCollectionViewCell.swift; sourceTree = "<group>"; };
 		864F65A21E094DB7002D729A /* EmojiCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmojiCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 		86A432DC1DFAD2DD00225022 /* YoungWeiboUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YoungWeiboUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A432E01DFAD2DD00225022 /* YoungWeiboUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoungWeiboUITests.swift; sourceTree = "<group>"; };
 		86A432E21DFAD2DD00225022 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86A63D741E1A0D7200E8EA79 /* YoungPhotoBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoungPhotoBrowserViewController.swift; sourceTree = "<group>"; };
 		86ABBB891E00F5E400B29312 /* YoungWelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoungWelcomeViewController.swift; sourceTree = "<group>"; };
 		86ABBB8A1E00F5E400B29312 /* YoungWelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YoungWelcomeViewController.xib; sourceTree = "<group>"; };
 		86ABBB8E1E01111300B29312 /* HomeStatusModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeStatusModel.swift; sourceTree = "<group>"; };
@@ -155,6 +160,7 @@
 		86AFC4731DFD6D9B00B377C9 /* PopoverAnimaor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverAnimaor.swift; sourceTree = "<group>"; };
 		86D5D55C1DFADC7400EB1BA1 /* YoungMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoungMainViewController.swift; sourceTree = "<group>"; };
 		86D5D5671DFB018B00EB1BA1 /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
+		86F7074B1E1A2370004D3615 /* PhotoBrowserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserCell.swift; sourceTree = "<group>"; };
 		86F97AFB1DFBBE8F00FAAEB0 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		86F97AFD1DFBBECA00FAAEB0 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
 		86F97AFF1DFBBEF600FAAEB0 /* Discovery.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discovery.storyboard; sourceTree = "<group>"; };
@@ -353,6 +359,7 @@
 		86A432EE1DFADA7800225022 /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				86A63D701E1A0D3500E8EA79 /* PhotoBrowser */,
 				8690723F1E04E49E00750787 /* Compose */,
 				86ABBB981E02930300B29312 /* Visitor */,
 				8613D91C1DFFFC26002F1E9D /* Welcome */,
@@ -412,6 +419,16 @@
 				86F97B091DFBC1AE00FAAEB0 /* ProfileViewController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		86A63D701E1A0D3500E8EA79 /* PhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				86A63D741E1A0D7200E8EA79 /* YoungPhotoBrowserViewController.swift */,
+				86F7074B1E1A2370004D3615 /* PhotoBrowserCell.swift */,
+				861E532B1E1A3C08007956BF /* YoungProgressView.swift */,
+			);
+			path = PhotoBrowser;
 			sourceTree = "<group>";
 		};
 		86ABBB8D1E010D1900B29312 /* HomeModel */ = {
@@ -829,13 +846,16 @@
 				8690724C1E04E8FA00750787 /* ComposeTitleView.swift in Sources */,
 				869072501E05446400750787 /* PicturePickerCollecView.swift in Sources */,
 				86AE8EC01DFE96AC00A8F6AE /* LoginViewController.swift in Sources */,
+				86F7074C1E1A2370004D3615 /* PhotoBrowserCell.swift in Sources */,
 				862FC6DC1E123AEA00D78557 /* FindEmoji.swift in Sources */,
 				86AFC46F1DFD2D2A00B377C9 /* PresentViewController.swift in Sources */,
 				864F65B31E094DB7002D729A /* UITextView-Extension.swift in Sources */,
 				864F65AD1E094DB7002D729A /* EmojiTextAttachment.swift in Sources */,
 				86F97B081DFBC19400FAAEB0 /* DiscoveryViewController.swift in Sources */,
+				861E532C1E1A3C08007956BF /* YoungProgressView.swift in Sources */,
 				86D5D55D1DFADC7400EB1BA1 /* YoungMainViewController.swift in Sources */,
 				86A432C11DFAD2DD00225022 /* AppDelegate.swift in Sources */,
+				86A63D751E1A0D7200E8EA79 /* YoungPhotoBrowserViewController.swift in Sources */,
 				86ABBB931E026A5100B29312 /* HomeUserModel.swift in Sources */,
 				864F65B01E094DB7002D729A /* EmojiManager.swift in Sources */,
 				860BBF051DFD123D0070CDB5 /* UINavigationItem-Extension.swift in Sources */,

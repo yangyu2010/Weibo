@@ -34,7 +34,7 @@ class HomeViewController: BaseViewController {
         if !isLogin {
             return
         }
-        
+                
         //2.设置navBar
         setupNavigationBar()
 
@@ -48,6 +48,8 @@ class HomeViewController: BaseViewController {
         //5.设置提示Label
         setupTipLabel()
         
+        //6.添加通知
+        addNotifiction()
     }
 
 
@@ -96,6 +98,12 @@ extension HomeViewController {
         tipLab.textAlignment = .center
         tipLab.isHidden = true
     }
+    
+    //添加图片的点击通知
+    fileprivate func addNotifiction() {
+    
+        NotificationCenter.default.addObserver(self, selector: #selector(showPhotoBrowser(noti:)), name: NSNotification.Name.init(showPhotoBrowserNote), object: nil)
+    }
 }
 
 // MARK: -事件监听
@@ -113,6 +121,16 @@ extension HomeViewController {
         popoverAnimator.presentedFrame = CGRect(x: (UIScreen.main.bounds.width - 180 ) * 0.5, y: 55, width: 180, height: 240)
         
         present(presentVC, animated: true, completion: nil)
+    }
+    
+    //监听微博图片的点击
+    @objc fileprivate func showPhotoBrowser(noti : Notification) {
+        
+        let urls = noti.userInfo![showPhotoBrowserURLKey] as! [URL]
+        let index = noti.userInfo![showPhotoBrowserIndexKey] as! NSIndexPath
+        
+        let photoBrowserVC = YoungPhotoBrowserViewController(index: index, picURLs: urls)
+        present(photoBrowserVC, animated: true , completion: nil)
     }
 }
 
@@ -156,6 +174,7 @@ extension HomeViewController {
             }
             
             self.cacheContentPic(cacheArr: tempArr)
+            self.showTipLab(count: tempArr.count)
         }
     }
     
@@ -179,7 +198,7 @@ extension HomeViewController {
             self.tableView.mj_footer.endRefreshing()
             SVProgressHUD.dismiss()
             self.tableView.reloadData()
-            self.showTipLab(count: cacheArr.count)
+            
         }
     }
     

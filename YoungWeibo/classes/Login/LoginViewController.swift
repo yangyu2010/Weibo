@@ -62,7 +62,7 @@ extension LoginViewController {
     }
     
     @objc fileprivate func rightBarItemClick() {
-
+        
     }
     
 }

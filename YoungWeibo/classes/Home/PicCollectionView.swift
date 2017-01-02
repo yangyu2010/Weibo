@@ -37,6 +37,12 @@ extension PicCollectionView : UICollectionViewDataSource , UICollectionViewDeleg
         cell.picURL = picURLs[indexPath.row]
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let info = [showPhotoBrowserIndexKey : indexPath ,showPhotoBrowserURLKey : picURLs] as [String : Any]
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: showPhotoBrowserNote), object: nil, userInfo: info)
+    }
 }
 
 

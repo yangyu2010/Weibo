@@ -21,3 +21,8 @@ let sina_redirect_uri = "http://www.520it.com"
 // MARK: -发微博添加图片时的通知
 let addPotoClickNotification = "addPotoClickNotification"
 let deletePotoClickNotification = "deletePotoClickNotification"
+
+// MARK: -微博正文点击图片时的通知
+let showPhotoBrowserNote = "picCollectionViewPicDidSelectedNote"
+let showPhotoBrowserIndexKey = "showPhotoBrowserIndexKey"
+let showPhotoBrowserURLKey = "showPhotoBrowserURLKey"
