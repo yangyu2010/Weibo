@@ -129,12 +129,16 @@ extension HomeViewController {
         
         let urls = noti.userInfo![showPhotoBrowserURLKey] as! [URL]
         let index = noti.userInfo![showPhotoBrowserIndexKey] as! IndexPath
+        let objc = noti.object as! PicCollectionView
         
         let photoBrowserVC = YoungPhotoBrowserViewController(index: index, picURLs: urls)
         
         photoBrowserVC.modalPresentationStyle = .custom
         
         photoBrowserVC.transitioningDelegate = photoBrowserAnimator
+        
+        photoBrowserAnimator.presentedDelegate = objc
+        photoBrowserAnimator.indexPath = index
         
         present(photoBrowserVC, animated: true , completion: nil)
     }

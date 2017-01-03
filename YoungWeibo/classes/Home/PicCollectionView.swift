@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PicCollectionView: UICollectionView {
     
@@ -41,7 +42,7 @@ extension PicCollectionView : UICollectionViewDataSource , UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let info = [showPhotoBrowserIndexKey : indexPath ,showPhotoBrowserURLKey : picURLs] as [String : Any]
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: showPhotoBrowserNote), object: nil, userInfo: info)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: showPhotoBrowserNote), object: self, userInfo: info)
     }
 }
 
@@ -64,5 +65,81 @@ class PicCollectionViewCell: UICollectionViewCell {
     //控件属性
     @IBOutlet weak var icon: UIImageView!
 }
+
+
+
+extension PicCollectionView : PhotoBrowserAnimatorPresentedDelegate {
+
+    func startRect(indexPath: IndexPath) -> CGRect {
+        
+        //1.获取cell
+        let cell = self.cellForItem(at: indexPath)!
+        
+        //2.获取cell的frame
+        let startFrame = self.convert(cell.frame, to: kKeyWindow)
+        
+        return startFrame
+        
+    }
+    
+    func endRect(indexPath: IndexPath) -> CGRect {
+        
+        //1.先获取图片
+        let picURL = picURLs[indexPath.row]
+
+        guard let img = SDWebImageManager.shared().imageCache.imageFromDiskCache(forKey: picURL.absoluteString) else {
+            return CGRect.zero
+        }
+        
+        let w = UIScreen.main.bounds.width
+        let h = (w / img.size.width) * img.size.height
+        var y : CGFloat = 0.0
+        if h < UIScreen.main.bounds.height {
+            y = (UIScreen.main.bounds.height - h) * 0.5
+        }
+
+        print(h,y)
+        
+        return CGRect(x: 0, y: y, width: w, height: h)
+ 
+        
+    }
+    
+    func imageView(indexPath: IndexPath) -> UIImageView {
+        
+        let imgView = UIImageView()
+        
+        let picURL = picURLs[indexPath.row]
+        
+        let img = SDWebImageManager.shared().imageCache.imageFromDiskCache(forKey: picURL.absoluteString)
+
+        imgView.image = img
+        imgView.contentMode = .scaleAspectFill
+        imgView.clipsToBounds = true
+        
+        return imgView
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

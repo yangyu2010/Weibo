@@ -8,9 +8,18 @@
 
 import UIKit
 
+protocol PhotoBrowserAnimatorPresentedDelegate : NSObjectProtocol {
+    
+    func startRect(indexPath : IndexPath) -> CGRect
+    func endRect(indexPath : IndexPath) ->CGRect
+    func imageView(indexPath : IndexPath) -> UIImageView
+}
+
 class PhotoBrowserAnimator: NSObject {
 
     var isPresented : Bool = false
+    var presentedDelegate : PhotoBrowserAnimatorPresentedDelegate?
+    var indexPath : IndexPath?
 }
 
 
@@ -36,29 +45,37 @@ extension PhotoBrowserAnimator : UIViewControllerAnimatedTransitioning {
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         
-//        if isPresented {
-//            presentedViewAnimate(transitionContext: transitionContext)
-//        }else {
-//            dismissedViewAnimate(transitionContext: transitionContext)
-//        }
-
         isPresented ? presentedViewAnimate(transitionContext: transitionContext) : dismissedViewAnimate(transitionContext: transitionContext)
     }
     
     
     fileprivate func presentedViewAnimate(transitionContext: UIViewControllerContextTransitioning) {
     
+        guard let presentedDelegate = presentedDelegate , let indexPath = indexPath else {
+            return
+        }
+        
         //1.取出要弹出来的view
         let presentedView = transitionContext.view(forKey: .to)!
         
         //2.添加到containerView中
         transitionContext.containerView.addSubview(presentedView)
         
+        let startRect = presentedDelegate.startRect(indexPath: indexPath)
+        let imgView = presentedDelegate.imageView(indexPath: indexPath)
+        let endRect = presentedDelegate.endRect(indexPath: indexPath)
+        transitionContext.containerView.addSubview(imgView)
+        imgView.frame = startRect
+        
         //3.执行动画
         presentedView.alpha = 0.0
+        transitionContext.containerView.backgroundColor = UIColor.black
         UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
-            presentedView.alpha = 1.0
+            imgView.frame = endRect
         }) { (_) in
+            imgView.removeFromSuperview()
+            transitionContext.containerView.backgroundColor = UIColor.clear
+            presentedView.alpha = 1.0
             transitionContext.completeTransition(true)
         }
     }
@@ -76,3 +93,9 @@ extension PhotoBrowserAnimator : UIViewControllerAnimatedTransitioning {
     }
     
 }
+
+
+
+
+
+
