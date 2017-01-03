@@ -13,13 +13,13 @@ fileprivate let picCollecCellID = "picCollecCellID"
 
 class YoungPhotoBrowserViewController: UIViewController {
 
-    var index : NSIndexPath
+    var index : IndexPath
     var picURLs : [URL]
     fileprivate lazy var picCollec : UICollectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: PhotoBrowserCollectionViewLayout())
     fileprivate lazy var closeBtn : UIButton = UIButton(bgColor: UIColor.darkGray, fontNum: 14.0, title: "关 闭")
     fileprivate lazy var saveBtn : UIButton = UIButton(bgColor: UIColor.darkGray, fontNum: 14.0, title: "保 存")
-    
-    init(index : NSIndexPath , picURLs : [URL]) {
+
+    init(index : IndexPath , picURLs : [URL]) {
         
         self.index = index
         self.picURLs = picURLs
@@ -35,9 +35,14 @@ class YoungPhotoBrowserViewController: UIViewController {
         super.viewDidLoad()
 
         setupUI()
+        
+        picCollec.scrollToItem(at: index, at: .left, animated: false)
     }
 
- 
+    override func loadView() {
+        super.loadView()
+        view.frame.size.width += 20
+    }
 }
 
 // MARK: -设置UI相关
@@ -49,14 +54,16 @@ extension YoungPhotoBrowserViewController {
         view.addSubview(closeBtn)
         view.addSubview(saveBtn)
         
-        picCollec.delegate = self
+//        picCollec.delegate = self
         picCollec.dataSource = self
         picCollec.register(PhotoBrowserCell.self, forCellWithReuseIdentifier: picCollecCellID)
         
         
-        picCollec.snp.makeConstraints { (make) in
-            make.top.left.bottom.right.equalTo(0)
-        }
+//        picCollec.snp.makeConstraints { (make) in
+//            make.top.left.bottom.right.equalTo(0)
+//        }
+
+        picCollec.bounds = view.bounds
         
         closeBtn.snp.makeConstraints { (make) in
             make.left.equalTo(20)
@@ -65,11 +72,12 @@ extension YoungPhotoBrowserViewController {
         }
         
         saveBtn.snp.makeConstraints { (make) in
-            make.right.equalTo(-20)
+            make.right.equalTo(-40)
             make.bottom.size.equalTo(closeBtn)
         }
         
         closeBtn.addTarget(self, action:#selector(closeBtnClick) , for: .touchUpInside)
+        saveBtn.addTarget(self, action: #selector(saveBtnClick), for: .touchUpInside)
     }
 }
 
@@ -80,13 +88,37 @@ extension YoungPhotoBrowserViewController {
     
         dismiss(animated: true, completion: nil)
     }
+    
+    
+    @objc fileprivate func saveBtnClick() {
+    
+        let cell = picCollec.visibleCells.first as! PhotoBrowserCell
+        guard let img = cell.imgView.image else {
+            return
+        }
+        
+        UIImageWriteToSavedPhotosAlbum(img, self, #selector(image(image:didFinishSavingWithError:contextInfo:)), nil)
+    }
+    
+    ////  - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo;
+    @objc fileprivate func image(image : UIImage , didFinishSavingWithError : NSError? , contextInfo : Any) {
+    
+        var info = ""
+        if didFinishSavingWithError != nil {
+            info = "保存失败"
+        }else {
+            info = "保存成功"
+        }
+        
+        ShowTip.showHudTip(tipStr: info)
+    }
 }
 
 
 
 
 // MARK: -collectionView代理
-extension YoungPhotoBrowserViewController : UICollectionViewDelegate , UICollectionViewDataSource {
+extension YoungPhotoBrowserViewController : UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return picURLs.count
@@ -96,7 +128,19 @@ extension YoungPhotoBrowserViewController : UICollectionViewDelegate , UICollect
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: picCollecCellID, for: indexPath) as! PhotoBrowserCell
         cell.picURL = picURLs[indexPath.row]
+        cell.delegate = self
         return cell
+    }
+    
+    
+}
+
+// MARK: -cell代理,退出图片浏览
+extension YoungPhotoBrowserViewController : PhotoBrowserCellDelegate {
+
+    func imgViewTapClick() {
+        
+        closeBtnClick()
     }
 }
 

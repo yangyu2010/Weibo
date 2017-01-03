@@ -21,8 +21,9 @@ class HomeViewController: BaseViewController {
     }
     
     fileprivate lazy var tipLab : UILabel = UILabel()
-    
     fileprivate lazy var statusMArr : [HomeViewModel] = [HomeViewModel]()
+    //用来处理转场动画的
+    fileprivate lazy var photoBrowserAnimator : PhotoBrowserAnimator = PhotoBrowserAnimator()
     
     // MARK: -系统回调
     override func viewDidLoad() {
@@ -127,9 +128,14 @@ extension HomeViewController {
     @objc fileprivate func showPhotoBrowser(noti : Notification) {
         
         let urls = noti.userInfo![showPhotoBrowserURLKey] as! [URL]
-        let index = noti.userInfo![showPhotoBrowserIndexKey] as! NSIndexPath
+        let index = noti.userInfo![showPhotoBrowserIndexKey] as! IndexPath
         
         let photoBrowserVC = YoungPhotoBrowserViewController(index: index, picURLs: urls)
+        
+        photoBrowserVC.modalPresentationStyle = .custom
+        
+        photoBrowserVC.transitioningDelegate = photoBrowserAnimator
+        
         present(photoBrowserVC, animated: true , completion: nil)
     }
 }

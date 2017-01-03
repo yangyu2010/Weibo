@@ -21,7 +21,7 @@ class ShowTip: NSObject {
         hud.animationType = .zoom
         hud.removeFromSuperViewOnHide = true
         hud.margin = 10.0
-        hud.hide(animated: true, afterDelay: 1.5)
+        hud.hide(animated: true, afterDelay: 1.2)
         
     }
     

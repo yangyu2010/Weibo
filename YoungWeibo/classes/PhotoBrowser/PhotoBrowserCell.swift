@@ -9,24 +9,30 @@
 import UIKit
 import SDWebImage
 
+protocol PhotoBrowserCellDelegate {
+    func imgViewTapClick()
+}
+
+
 class PhotoBrowserCell: UICollectionViewCell {
     
     var picURL : URL? {
         didSet {
-            
             setupContent(picURL: picURL)
         }
     }
     
+    lazy var imgView : UIImageView = UIImageView()
     fileprivate lazy var scrollV : UIScrollView = UIScrollView()
-    fileprivate lazy var imgView : UIImageView = UIImageView()
     fileprivate lazy var progressV : YoungProgressView = YoungProgressView()
+    
+    var delegate : PhotoBrowserCellDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         setupUI()
-        contentView.backgroundColor = UIColor.red
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -46,13 +52,26 @@ extension PhotoBrowserCell {
         scrollV.addSubview(imgView)
         
         scrollV.frame = contentView.bounds
+        scrollV.frame.size.width -= 20
         progressV.bounds = CGRect(x: 0, y: 0, width: 50, height: 50)
-        progressV.center = contentView.center
+        progressV.center = scrollV.center
         progressV.isHidden = true
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(imgViewTapClick))
+        imgView.addGestureRecognizer(tap)
+        imgView.isUserInteractionEnabled = true
     }
 }
 
+// MARK: -事件监听
+extension PhotoBrowserCell {
 
+    @objc fileprivate func imgViewTapClick() {
+            delegate?.imgViewTapClick()
+    }
+}
+
+// MARK: -设置cell内容
 extension PhotoBrowserCell {
 
     fileprivate func setupContent(picURL : URL?) {
