@@ -144,6 +144,28 @@ extension YoungPhotoBrowserViewController : PhotoBrowserCellDelegate {
     }
 }
 
+// MARK: -消失动画的代理
+extension YoungPhotoBrowserViewController : PhotoBrowserAnimatorDismissDelegate {
+
+    func indexPathForDismiss() -> IndexPath {
+        let cell = picCollec.visibleCells.first!
+        return picCollec.indexPath(for: cell)!
+    }
+    
+    func imageViewForDismiss() -> UIImageView {
+        let img = UIImageView()
+        let cell = picCollec.visibleCells.first as! PhotoBrowserCell
+        img.frame = cell.imgView.frame
+        img.image = cell.imgView.image
+        
+        img.contentMode = .scaleAspectFill
+        img.clipsToBounds = true
+        
+        return img
+    }
+    
+}
+
 // MARK: -自定义layout
 class PhotoBrowserCollectionViewLayout: UICollectionViewFlowLayout {
     

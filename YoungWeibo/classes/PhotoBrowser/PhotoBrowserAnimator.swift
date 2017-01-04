@@ -8,18 +8,27 @@
 
 import UIKit
 
+// MARK: -弹出动画的代理
 protocol PhotoBrowserAnimatorPresentedDelegate : NSObjectProtocol {
     
-    func startRect(indexPath : IndexPath) -> CGRect
-    func endRect(indexPath : IndexPath) ->CGRect
-    func imageView(indexPath : IndexPath) -> UIImageView
+    func startRectForPresented(indexPath : IndexPath) -> CGRect
+    func endRectForPresented(indexPath : IndexPath) ->CGRect
+    func imageViewForPresented(indexPath : IndexPath) -> UIImageView
+}
+
+// MARK: -消息动画的代理
+protocol PhotoBrowserAnimatorDismissDelegate : NSObjectProtocol {
+
+    func indexPathForDismiss() -> IndexPath
+    func imageViewForDismiss() -> UIImageView
 }
 
 class PhotoBrowserAnimator: NSObject {
 
     var isPresented : Bool = false
-    var presentedDelegate : PhotoBrowserAnimatorPresentedDelegate?
     var indexPath : IndexPath?
+    var presentedDelegate : PhotoBrowserAnimatorPresentedDelegate?
+    var dismissDelegate : PhotoBrowserAnimatorDismissDelegate?
 }
 
 
@@ -40,7 +49,7 @@ extension PhotoBrowserAnimator : UIViewControllerTransitioningDelegate {
 extension PhotoBrowserAnimator : UIViewControllerAnimatedTransitioning {
 
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 1.0
+        return 0.5
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
@@ -61,9 +70,9 @@ extension PhotoBrowserAnimator : UIViewControllerAnimatedTransitioning {
         //2.添加到containerView中
         transitionContext.containerView.addSubview(presentedView)
         
-        let startRect = presentedDelegate.startRect(indexPath: indexPath)
-        let imgView = presentedDelegate.imageView(indexPath: indexPath)
-        let endRect = presentedDelegate.endRect(indexPath: indexPath)
+        let startRect = presentedDelegate.startRectForPresented(indexPath: indexPath)
+        let imgView = presentedDelegate.imageViewForPresented(indexPath: indexPath)
+        let endRect = presentedDelegate.endRectForPresented(indexPath: indexPath)
         transitionContext.containerView.addSubview(imgView)
         imgView.frame = startRect
         
@@ -80,14 +89,26 @@ extension PhotoBrowserAnimator : UIViewControllerAnimatedTransitioning {
         }
     }
     
+    
+    
     fileprivate func dismissedViewAnimate(transitionContext: UIViewControllerContextTransitioning) {
     
+        guard let dismissDelegate = dismissDelegate ,let presentedDelegate = presentedDelegate else {
+            return
+        }
+        
         let dismissView = transitionContext.view(forKey: .from)
+        dismissView?.removeFromSuperview()
+        
+        let imgV = dismissDelegate.imageViewForDismiss()
+        transitionContext.containerView.addSubview(imgV)
+        
+        let indexPath = dismissDelegate.indexPathForDismiss()
         
         UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: { 
-            dismissView?.alpha = 0.0
+           imgV.frame = presentedDelegate.startRectForPresented(indexPath: indexPath)
         }) { (_) in
-            dismissView?.removeFromSuperview()
+            
             transitionContext.completeTransition(true)
         }
     }

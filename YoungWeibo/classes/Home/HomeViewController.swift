@@ -139,6 +139,7 @@ extension HomeViewController {
         
         photoBrowserAnimator.presentedDelegate = objc
         photoBrowserAnimator.indexPath = index
+        photoBrowserAnimator.dismissDelegate = photoBrowserVC
         
         present(photoBrowserVC, animated: true , completion: nil)
     }

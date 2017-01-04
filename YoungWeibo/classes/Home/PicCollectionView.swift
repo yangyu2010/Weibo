@@ -70,7 +70,7 @@ class PicCollectionViewCell: UICollectionViewCell {
 
 extension PicCollectionView : PhotoBrowserAnimatorPresentedDelegate {
 
-    func startRect(indexPath: IndexPath) -> CGRect {
+    func startRectForPresented(indexPath: IndexPath) -> CGRect {
         
         //1.获取cell
         let cell = self.cellForItem(at: indexPath)!
@@ -82,7 +82,7 @@ extension PicCollectionView : PhotoBrowserAnimatorPresentedDelegate {
         
     }
     
-    func endRect(indexPath: IndexPath) -> CGRect {
+    func endRectForPresented(indexPath: IndexPath) -> CGRect {
         
         //1.先获取图片
         let picURL = picURLs[indexPath.row]
@@ -105,7 +105,7 @@ extension PicCollectionView : PhotoBrowserAnimatorPresentedDelegate {
         
     }
     
-    func imageView(indexPath: IndexPath) -> UIImageView {
+    func imageViewForPresented(indexPath: IndexPath) -> UIImageView {
         
         let imgView = UIImageView()
         
