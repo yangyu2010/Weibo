@@ -185,7 +185,7 @@ extension HomeViewController {
             }
             
             self.cacheContentPic(cacheArr: tempArr)
-            self.showTipLab(count: tempArr.count)
+//            self.showTipLab(count: tempArr.count)
         }
     }
     
