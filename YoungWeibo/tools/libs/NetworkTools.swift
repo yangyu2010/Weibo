@@ -108,6 +108,8 @@ extension NetworkTools {
                           "max_id" : "\(max_id)"
                           ]
         
+        NSLog(message: parameters)
+        
         requestData(methodType: .GET, urlString: urlStr, parameters: parameters) { (result, error) in
             
             guard let statusDict = result else {

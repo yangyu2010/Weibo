@@ -51,6 +51,9 @@ class HomeViewController: BaseViewController {
         
         //6.添加通知
         addNotifiction()
+        
+        //7.请求数据
+        requestHomeData(isNewData: true)
     }
 
 
@@ -84,7 +87,7 @@ extension HomeViewController {
             self.requestHomeData(isNewData: false)
         })
         
-        tableView.mj_header.beginRefreshing()
+        //tableView.mj_header.beginRefreshing()
     }
     
     //设置提示lab
@@ -150,22 +153,19 @@ extension HomeViewController {
 
     //请求数据
     @objc fileprivate func requestHomeData(isNewData : Bool) {
-    
-        SVProgressHUD.show()
         
         var since_id :Int = 0
         var max_id : Int = 0
         if isNewData {
             since_id = statusMArr.first?.statusModel?.mid ?? 0
         } else {
-            max_id = statusMArr.last?.statusModel?.mid ?? 0
+            since_id = statusMArr.last?.statusModel?.mid ?? 0
             max_id = max_id == 0 ? 0 : (max_id - 1)
         }
  
         NetworkTools.shareInstance.requestHomeStausesData(since_id: since_id, max_id: max_id) { (resultArr, error) in
             
             guard let arr = resultArr , error == nil , arr.count != 0 else {
-                SVProgressHUD.dismiss()
                 self.tableView.mj_header.endRefreshing()
                 self.tableView.mj_footer.endRefreshing()                
                 return
@@ -207,7 +207,6 @@ extension HomeViewController {
         group.notify(queue: DispatchQueue.main) {
             self.tableView.mj_header.endRefreshing()
             self.tableView.mj_footer.endRefreshing()
-            SVProgressHUD.dismiss()
             self.tableView.reloadData()
             
         }
