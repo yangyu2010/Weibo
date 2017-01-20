@@ -100,16 +100,13 @@ extension NetworkTools {
     }
     
     //请求首页数据
-    func requestHomeStausesData(since_id : Int , max_id : Int , finished : @escaping ([[String : Any]]? , Error?) -> ()) {
+    func requestHomeStausesData(since_id : Int64 , max_id : Int64 , finished : @escaping ([[String : Any]]? , Error?) -> ()) {
         
         let urlStr = "https://api.weibo.com/2/statuses/home_timeline.json"
         let parameters = ["access_token" : UserAccountViewModel.shareIntance.account?.access_token!,
                           "since_id" : "\(since_id)" ,
                           "max_id" : "\(max_id)"
                           ]
-        
-        NSLog(message: parameters)
-        
         requestData(methodType: .GET, urlString: urlStr, parameters: parameters) { (result, error) in
             
             guard let statusDict = result else {

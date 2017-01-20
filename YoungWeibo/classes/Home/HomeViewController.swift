@@ -80,11 +80,11 @@ extension HomeViewController {
     fileprivate func setRefresh() {
 
         tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: { 
-            self.requestHomeData(isNewData: true)
+            self.requestHomeData(isNewData: false)
         })
         
         tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
-            self.requestHomeData(isNewData: false)
+            self.requestHomeData(isNewData: true)
         })
         
         //tableView.mj_header.beginRefreshing()
@@ -154,13 +154,15 @@ extension HomeViewController {
     //请求数据
     @objc fileprivate func requestHomeData(isNewData : Bool) {
         
-        var since_id :Int = 0
-        var max_id : Int = 0
+        var since_id: Int64 = 0
+        var max_id: Int64 = 0
         if isNewData {
-            since_id = statusMArr.first?.statusModel?.mid ?? 0
-        } else {
-            since_id = statusMArr.last?.statusModel?.mid ?? 0
+            //加载更多
+            max_id = statusMArr.last?.statusModel?.mid ?? 0
             max_id = max_id == 0 ? 0 : (max_id - 1)
+        } else {
+            //下拉刷新
+            since_id = statusMArr.first?.statusModel?.mid ?? 0
         }
  
         NetworkTools.shareInstance.requestHomeStausesData(since_id: since_id, max_id: max_id) { (resultArr, error) in
@@ -179,14 +181,17 @@ extension HomeViewController {
             }
             
             if isNewData {
-                self.statusMArr =  tempArr + self.statusMArr
-            }else {
+                //加载更多
                 self.statusMArr +=  tempArr
+            }else {
+                self.statusMArr =  tempArr + self.statusMArr
             }
             
             self.cacheContentPic(cacheArr: tempArr)
 //            self.showTipLab(count: tempArr.count)
         }
+        
+        
     }
     
     //下载内容中的图片 开发过程中不需要这步

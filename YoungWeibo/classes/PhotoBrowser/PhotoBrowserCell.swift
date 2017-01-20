@@ -30,9 +30,7 @@ class PhotoBrowserCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         setupUI()
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -60,6 +58,7 @@ extension PhotoBrowserCell {
         let tap = UITapGestureRecognizer(target: self, action: #selector(imgViewTapClick))
         imgView.addGestureRecognizer(tap)
         imgView.isUserInteractionEnabled = true
+        
     }
 }
 
@@ -82,6 +81,11 @@ extension PhotoBrowserCell {
         
         guard let image = SDWebImageManager.shared().imageCache.imageFromDiskCache(forKey: picURL.absoluteString) else {
             return
+        }
+        
+        //cell复用 图片会不在最上面 设置下
+        if scrollV.contentOffset.y > 0 {
+            scrollV.contentOffset = CGPoint(x: 0, y: 0)
         }
         
         let width = UIScreen.main.bounds.width

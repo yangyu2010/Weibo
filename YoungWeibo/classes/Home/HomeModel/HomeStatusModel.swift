@@ -11,7 +11,7 @@ import UIKit
 class HomeStatusModel: NSObject {
 
     var created_at : String?        //微博创建时间
-    var mid : Int = 0               //微博MID
+    var mid : Int64 = 0              //微博MID
     var text : String?              //微博信息内容
     var source : String?            //微博来源
     var user : HomeUserModel?       //发微博的用户信息
