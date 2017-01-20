@@ -63,9 +63,6 @@ extension LoginViewController {
     
     @objc fileprivate func rightBarItemClick() {
         
-        let jsonStr = "document.getElementById('userId').value = '15342738155m2328@sina.cn';document.getElementById('passwd').value = 'yangyu4272121'"
-        
-        webV.stringByEvaluatingJavaScript(from: jsonStr)
     }
     
 }
